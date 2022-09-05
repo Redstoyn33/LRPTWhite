@@ -30,6 +30,7 @@
 			inc_metabalance(mob, reward, reason="Задачи выполнены!")
 
 /client/proc/get_metabalance()
+	/*
 	var/datum/db_query/query_get_metacoins = SSdbcore.NewQuery(
 		"SELECT round(metacoins) FROM player WHERE ckey = :ckey",
 		list("ckey" = ckey)
@@ -46,11 +47,16 @@
 
 	qdel(query_get_metacoins)
 	return mc_count
+	*/
+	return 10000000
 
 /client/proc/update_metabalance_cache()
-	mc_cached = get_metabalance()
+	//mc_cached = get_metabalance()
+	mc_cached = 10000000
 
 /client/proc/set_metacoin_count(mc_count, ann = TRUE)
+	return
+	/*
 	if(IsAdminAdvancedProcCall())
 		return
 
@@ -63,8 +69,11 @@
 	qdel(query_set_metacoins)
 	if(ann)
 		to_chat(src, "<span class='rose bold'>Новый баланс: [mc_count] метакэша!</span>")
+	*/
 
 /proc/inc_metabalance(mob/M, mc_count, ann = TRUE, reason = null)
+	return
+	/*
 	if(IsAdminAdvancedProcCall())
 		return
 
@@ -88,8 +97,9 @@
 			to_chat(M, "<span class='rose bold'>[reason] [mc_count >= 0 ? "Получено" : "Потеряно"] [abs(mc_count)] метакэша!</span>")
 		else
 			to_chat(M, "<span class='rose bold'>[mc_count >= 0 ? "Получено" : "Потеряно"] [abs(mc_count)] метакэша!</span>")
+	*/
 /client
-	var/mc_cached = 0
+	var/mc_cached = 10000000
 
 /mob/living/carbon/human/get_status_tab_items()
 	. = ..()
