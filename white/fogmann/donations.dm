@@ -298,7 +298,7 @@ GLOBAL_PROTECT(donations_list)
 /datum/donate_info/New(name, path, cost, special = null, stock = 30)
 	src.name = name
 	src.path_to = path
-	src.cost = cost
+	src.cost = 0
 	src.special = special
 	src.stock = stock
 
