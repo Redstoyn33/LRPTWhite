@@ -1,6 +1,6 @@
  //needs gtts python module
 
-#define TTS_PATH "/home/ubuntu/tenebrae/prod/server_white/white/hule/tts"
+#define TTS_PATH "C:/Users/User/Desktop/white/white/hule/tts"
 
 GLOBAL_VAR_INIT(tts, FALSE)
 GLOBAL_LIST_INIT(tts_settings, list("xenia"))//1-lang, 2-livingonly
@@ -14,7 +14,9 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 ////////////////////////////////////////////////
 
 /proc/tts_args(var/name, var/msg, var/lang)
-	world.Export("http://127.0.0.1:2386/?text=[url_encode(msg)]&speaker=[lang]&ckey=[name]")
+	//world.Export("http://127.0.0.1:2386/?text=[url_encode(msg)]&speaker=[lang]&ckey=[name]")
+	//world.shelleo("cd [TTS_PATH] && python3 t.py \"[msg]\" [lang] \"[TTS_PATH]/lines/[name].wav\"")
+	world.shelleo("gtts-cli \"[msg]\" -l ru -o [TTS_PATH]/lines/[name].wav")
 
 /////////////////////////////////////
 
