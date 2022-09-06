@@ -438,6 +438,7 @@ GLOBAL_PROTECT(donators)
 
 			to_chat(user, span_info("[capitalize(prize.name)] был создан!"))
 
+			message_admins("[prize.name] был куплен [ADMIN_LOOKUPFLW(user)]")
 			money -= prize.cost
 			allowed_num_items--
 			return TRUE
