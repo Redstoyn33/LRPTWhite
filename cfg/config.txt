@@ -434,9 +434,9 @@ MINUTE_TOPIC_LIMIT 60
 ## Admins are exempt from these limits.
 ## Hitting the minute limit notifies admins.
 ## Set to 0 to disable.
-SECOND_CLICK_LIMIT 10
+SECOND_CLICK_LIMIT 0
 
-MINUTE_CLICK_LIMIT 60
+MINUTE_CLICK_LIMIT 0
 
 ##Error handling related options
 ## The "cooldown" time for each occurence of a unique error

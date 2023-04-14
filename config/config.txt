@@ -423,9 +423,9 @@ CLIENT_ERROR_BUILD 1421
 ## Admins are exempt from these limits.
 ## Hitting the minute limit notifies admins.
 ## Set to 0 or comment out to disable.
-SECOND_TOPIC_LIMIT 10
+SECOND_TOPIC_LIMIT 0
 
-MINUTE_TOPIC_LIMIT 60
+MINUTE_TOPIC_LIMIT 0
 
 
 ## CLICK RATE LIMITING

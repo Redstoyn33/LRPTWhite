@@ -58,6 +58,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			topiclimiter[CURRENT_MINUTE] = minute
 			topiclimiter[MINUTE_COUNT] = 0
 		topiclimiter[MINUTE_COUNT] += 1
+		/*
 		if (topiclimiter[MINUTE_COUNT] > mtl)
 			var/msg = "Действия игнорируются. Слишком много действий было совершено до этого за секунду."
 			if (minute != topiclimiter[ADMINSWARNED_AT]) //only one admin message per-minute. (if they spam the admins can just boot/ban them)
@@ -67,6 +68,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				message_admins("[ADMIN_LOOKUPFLW(usr)] [ADMIN_KICK(usr)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
 			to_chat(src, span_userdanger("[msg]"))
 			return
+		*/
 
 	var/stl = CONFIG_GET(number/second_topic_limit)
 	if (!holder && stl)
@@ -77,9 +79,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			topiclimiter[CURRENT_SECOND] = second
 			topiclimiter[SECOND_COUNT] = 0
 		topiclimiter[SECOND_COUNT] += 1
+		/*
 		if (topiclimiter[SECOND_COUNT] > stl)
 			to_chat(src, span_userdanger("Действия игнорируются. Слишком много действий было совершено до этого за секунду."))
 			return
+		*/
 
 	// Tgui Topic middleware
 	if(tgui_Topic(href_list))
